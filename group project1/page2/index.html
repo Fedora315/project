@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+ 
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__wrapper">
+          <img
+            src="/group project1/image/header_footer/header-logo.svg"
+            alt="header-logo" class="wrapper__logo"
+          />
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <li class="header__menu-item">
+                <a class="header__menu-link"href="#">Главная</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Экскурсии</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Личный кабинет</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__title">
+          <h1 class="header__title-excursions">НАШИ ЭКСКУРСИИ</h1>
+        </div>
+      </div>
+      </header>
+      <main class="online-shop">
+        <div class="online-shop__registration">
+          <nav class="online-shop__registration-transport">
+            <a class="online-shop__registration-transport tranport" href="#"
+              >АВТОБУСНЫЙ ТУР</a
+            >
+            <a class="online-shop__registration-transport tranport" href=""
+              >ДЖИППИНГ</a
+            >
+            <a class="online-shop__registration-transport tranport" href=""
+              >ЯХТИНГ</a
+            >
+            <a class="online-shop__registration-transport tranport" href=""
+              >КАНЬОНИНГ</a
+            >
+          </nav>
+          <div class="online-shop__registration-form">
+            <select
+              class="online-shop__registration-cities"
+              name="cities"
+              id="cities"
+            >
+              <option value="1">Абхазия</option>
+              <option value="2">Сочи</option>
+              <option value="3">Анапа</option>
+              <option value="4">Краснодар</option>
+            </select>
+            <input class="online-shop__registration-date" type="date" />
+            <select
+              class="online-shop__registration-number"
+              name="number"
+              id="number"
+            >
+              <option value="1">1 чел.</option>
+              <option value="2">2 чел.</option>
+              <option value="3">3 чел.</option>
+              <option value="4">4 чел.</option>
+              <option value="4">5 чел.</option>
+              <option value="4">6 чел.</option>
+            </select>
+            <button class="online-shop__button">Показать</button>
+          </div>
+        </div>
+        <div class="all-tours">
+          <div class="all-tours__filters">
+            <h3 class="all-tours__filters-title">Фильтры</h3>
+            
+            <p  class="all-tours__filters-name">
+              <label class="all-tours__filters-costs" for="amount">Стоимость</label>
+              <input type="text" id="amount" readonly >
+            </p>
+             
+            <div id="slider-range"></div>
+            <img
+              src="/group project1/image/page2/icon_line.svg"
+              alt=""
+              class="line"
+            />
+            <span class="all-tours__filters-guests">Количество гостей</span>
+            
+            
+            <div class="all-tours__filters-guests number">
+              <button class="button active">1 чел.</button>
+              <button class="button">2 чел.</button>
+              <button class="button">3 чел.</button>
+              <button class="button">4 чел.</button>
+              <button class="button">5 чел.</button>
+              <button class="button">6 чел.</button>
+              <button class="button">7 чел.</button>
+              <button class="button">Больше 7 чел.</button>
+            </div>
+            <img
+              src="/group project1/image/page2/icon_line.svg"
+              alt=""
+              class="line"
+            />
+            <span class="all-tours__filters-place">Место</span>
+            <div class="radio-cities">
+              <label>
+                <input class="cities" type="radio" name="radio" />Абхазия</label
+              >
+              <label
+                ><input class="cities" type="radio" name="radio" />Красная
+                поляна</label
+              >
+              <label
+                ><input class="cities" type="radio" name="radio" />Сочи</label
+              >
+              <label
+                ><input class="cities" type="radio" name="radio" />Адлер</label
+              >
+              <label
+                ><input
+                  class="cities"
+                  type="radio"
+                  name="radio"
+                />Краснодар</label
+              >
+            </div>
+            <img
+              src="/group project1/image/page2/icon_line.svg"
+              alt=""
+              class="line"
+            />
+            <span class="all-tours__filters-time">Длительность</span>
+            <p class="range">
+              <input
+                class="range__input"
+                type="range"
+                min="0"
+                max="10"
+                onchange="document.getElementById('rangeValue').innerHTML = this.value;"
+              />
+              <span id="rangeValue">5</span>
+            </p>
+            <datalist id="rangeList">
+              <option value="0" label="0"></option>
+              <option value="2" label="2 "></option>
+              <option value="4" label="4"></option>
+              <option value="6" label="6"></option>
+              <option value="8" label="8"></option>
+              <option value="10" label="10"></option>
+            </datalist>
+            <button class="btn__show">Показать</button>
+            <div class="all-tours__filters-del">Сбросить все</div>
+          </div>
+
+          <section class="tours">
+            <h2 class="title tours__title">Наши туры</h2>
+  
+            <!-- карточка тура -->
+            <div class="tours__list">
+  
+              <div class="card-column">
+                <article class="cart-tour tour-cards">
+                  <img class="cart-tour__image" src="/group project1/image/page2/deco_picture.png" alt="" />
+                  <div class="cart-tour__content">
+                    <span class="cart-tour__type">Автобусный тур</span>
+                    <h4 class="cart-tour__title">Золотое кольцо Абхазии (из Адлера)</h4>
+                    <div class="cart-tour__price-list">
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 618 ₽</span>
+                        <span class="cart-tour__price-desc">Взрослый билет</span>
+                      </div>
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 412 ₽</span>
+                        <span class="cart-tour__price-desc">Детсткий билет</span>
+                      </div>
+                      <span class="cart-tour__tour-intreval"> 2,5 часа </span>
+                    </div>
+                    <p class="text cart-tour__desc">
+                      Вас ждет путешествие по "Золотому Кольцу Абхазии" на
+                      Мерседес Спринтер (20 мест). По маршруту вас будет
+                      сопровождать профессиональный гид. Посадка на экскурсию
+                      осуществляется с вашего отеля или ближайшей автобусной
+                      остановки. Пересечение границы без пересадок...
+                    </p>
+                    <div class="cart-tour__footer">
+                      <button class="button cart-tour__button"><a href="#">Подробнее</a></button>
+                      <svg class="card-tour__icon-like" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#EDEDED" />
+                        <path
+                          d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
+                          stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+  
+                <article class="cart-tour tour-cards">
+                  <img class="cart-tour__image" src="/group project1/image/page2/deco_picture.png" alt="" />
+                  <div class="cart-tour__content">
+                    <span class="cart-tour__type">Автобусный тур</span>
+                    <h4 class="cart-tour__title">Золотое кольцо Абхазии (из Адлера)</h4>
+                    <div class="cart-tour__price-list">
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 618 ₽</span>
+                        <span class="cart-tour__price-desc">Взрослый билет</span>
+                      </div>
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 412 ₽</span>
+                        <span class="cart-tour__price-desc">Детсткий билет</span>
+                      </div>
+                      <span class="cart-tour__tour-intreval"> 2,5 часа </span>
+                    </div>
+                    <p class="text cart-tour__desc">
+                      Вас ждет путешествие по "Золотому Кольцу Абхазии" на
+                      Мерседес Спринтер (20 мест). По маршруту вас будет
+                      сопровождать профессиональный гид. Посадка на экскурсию
+                      осуществляется с вашего отеля или ближайшей автобусной
+                      остановки. Пересечение границы без пересадок...
+                    </p>
+                    <div class="cart-tour__footer">
+                      <button class="button cart-tour__button"><a href="#">Подробнее</a></button>
+                      <svg class="card-tour__icon-like" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        stroke="rgba(4, 153, 221, 1)" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#EDEDED" />
+                        <path
+                          d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
+                          stroke="rgba(4, 153, 221, 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+  
+                <article class="cart-tour tour-cards">
+                  <img class="cart-tour__image" src="/group project1/image/page2/deco_picture.png" alt="" />
+                  <div class="cart-tour__content">
+                    <span class="cart-tour__type">Автобусный тур</span>
+                    <h4 class="cart-tour__title">Золотое кольцо Абхазии (из Адлера)</h4>
+                    <div class="cart-tour__price-list">
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 618 ₽</span>
+                        <span class="cart-tour__price-desc">Взрослый билет</span>
+                      </div>
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 412 ₽</span>
+                        <span class="cart-tour__price-desc">Детсткий билет</span>
+                      </div>
+                      <span class="cart-tour__tour-intreval"> 2,5 часа </span>
+                    </div>
+                    <p class="text cart-tour__desc">
+                      Вас ждет путешествие по "Золотому Кольцу Абхазии" на
+                      Мерседес Спринтер (20 мест). По маршруту вас будет
+                      сопровождать профессиональный гид. Посадка на экскурсию
+                      осуществляется с вашего отеля или ближайшей автобусной
+                      остановки. Пересечение границы без пересадок...
+                    </p>
+                    <div class="cart-tour__footer">
+                      <button class="button cart-tour__button"><a href="#">Подробнее</a></button>
+                      <svg class="card-tour__icon-like" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#EDEDED" />
+                        <path
+                          d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
+                          stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+                <article class="cart-tour tour-cards">
+                  <img class="cart-tour__image" src="/group project1/image/page2/deco_picture.png" alt="" />
+                  <div class="cart-tour__content">
+                    <span class="cart-tour__type">Автобусный тур</span>
+                    <h4 class="cart-tour__title">Золотое кольцо Абхазии (из Адлера)</h4>
+                    <div class="cart-tour__price-list">
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 618 ₽</span>
+                        <span class="cart-tour__price-desc">Взрослый билет</span>
+                      </div>
+                      <div class="cart-tour__price-item">
+                        <span class="cart-tour__price">1 412 ₽</span>
+                        <span class="cart-tour__price-desc">Детсткий билет</span>
+                      </div>
+                      <span class="cart-tour__tour-intreval"> 2,5 часа </span>
+                    </div>
+                    <p class="text cart-tour__desc">
+                      Вас ждет путешествие по "Золотому Кольцу Абхазии" на
+                      Мерседес Спринтер (20 мест). По маршруту вас будет
+                      сопровождать профессиональный гид. Посадка на экскурсию
+                      осуществляется с вашего отеля или ближайшей автобусной
+                      остановки. Пересечение границы без пересадок...
+                    </p>
+                    <div class="cart-tour__footer">
+                      <button class="button cart-tour__button"><a href="#">Подробнее</a></button>
+                      <svg class="card-tour__icon-like" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#EDEDED" />
+                        <path
+                          d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
+                          stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+  
+              </div>
+  
+  
+            </div>
+            
+            <!-- карточка тура -->
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        
+          <img
+            src="/group project1/image/header_footer/footer_logo.svg"
+            class="footer__logo"
+            alt="footer-logo"
+          />
+          <div class="footer__menu-contacts">
+            <nav class="footer__menu">
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Главная</a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Экскурсии</a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Личный кабинет</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__contacts">
+              <a href="#" class="footer__contacts-whatsapp">+7 964 944 18 74</a>
+              <a href="#" class="footer__contacts-telegram">+7 918 919 98 28</a>
+              <a href="#" class="footer__contacts-telegram"
+                >Телеграм-бот PeroTravel</a
+              >
+            </div>
+          </div>
+          <div class="footer__mail">
+            <a href="#" class="footer__mail-ico">office@perotravel.ru</a>
+          
+          <div class="footer__app">
+            <a href="#" class="footer__app-vk"
+              ><img
+                src="/group project1/image/header_footer/icon_vk_footer.svg"
+                alt="vk"
+            /></a>
+            <a href="#" class="footer__app-inst"
+              ><img
+                src="/group project1/image/header_footer/icon_inst_footer.svg"
+                alt="inst"
+            /></a>
+            <a href="#" class="footer__app-facebook"
+              ><img
+                src="/group project1/image/header_footer/icon_facebook_footer.svg"
+                alt="facebook"
+            /></a>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <script>
+      $( function() {
+        $( "#slider-range" ).slider({
+          range: true,
+          min: 0,
+          max: 10000,
+          values: [ 1600, 4000  ],
+          slide: function( event, ui ) {
+            $( "#amount" ).val(  ui.values[ 0 ] + " - "+ ui.values[ 1 ]+ " "+ "рублей " );
+          }
+        });
+        $( "#amount" ).val(  $( "#slider-range" ).slider( "values", 0 ) +
+          " - " + $( "#slider-range" ).slider( "values", 1 ) );
+      } );
+      </script>
+  </body>
+</html>
